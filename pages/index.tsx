@@ -10,6 +10,9 @@ import {
 import type { DatePickerProps } from 'antd'
 import { SmileFilled } from '@ant-design/icons'
 import Link from 'next/link'
+import type { NextPageWithLayout } from './_app'
+import {SiderLayout} from "../components/layout/Sider";
+import {ReactElement} from "react";
 
 const FormItem = Form.Item
 
@@ -17,7 +20,7 @@ const content = {
   marginTop: '100px',
 }
 
-export default function Home() {
+function Home(): JSX.Element {
   const onDatePickerChange: DatePickerProps['onChange'] = (
     date,
     dateString
@@ -99,3 +102,13 @@ export default function Home() {
     </div>
   )
 }
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return (
+      <SiderLayout>
+        {page}
+      </SiderLayout>
+  )
+}
+
+export default Home
