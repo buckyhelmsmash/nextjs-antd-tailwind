@@ -6,6 +6,7 @@ import {
     TeamOutlined,
     UserOutlined,
 } from '@ant-design/icons';
+import { GithubOutlined } from '@ant-design/icons'
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 
@@ -52,8 +53,8 @@ export const SiderLayout: React.FC<SiderLayoutProps> = ({children}) => {
     return (
         <Layout style={{ minHeight: '100vh' }}>
             <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-                <div className={"mx-2 my-4 p-2 text-xl text-center text-amber-300 bg-gray-600 rounded"}>
-                    Logo
+                <div className={"mx-2 my-4 p-2 text-xl text-center text-white text-amber-300 bg-gray-600 rounded"}>
+                <GithubOutlined /> HesaRaya
                 </div>
                 <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
             </Sider>
